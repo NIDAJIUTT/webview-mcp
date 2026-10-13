@@ -13,16 +13,15 @@ Most of that is already solved by other AppleScript-MCP projects. The reason thi
 - `set_text` — direct AXValue set (works on native AppKit fields; silently no-ops on most WebView inputs — this is the documented limitation Pro fixes)
 - `press_key` — send a keystroke with modifiers
 
-## Pro ($49 one-time, [buy here](https://webviewmcp.gumroad.com/l/pro))
+## Pro ($49 one-time, [buy here](https://9298143553819.gumroad.com/l/jxptds))
 
 - `wake_accessibility` — forces a WebView app's accessibility tree to build via `AXManualAccessibility`, from *outside* the app (no source access needed). Reports the known Electron limitation (`kAXErrorAttributeUnsupported`, [electron#37465](https://github.com/electron/electron/issues/37465)) explicitly instead of failing silently.
 - `set_text` paste fallback — when the direct set doesn't stick, falls back to focus + select-all + clipboard paste, which *does* dispatch a real input event. This is the fix for React/MUI-controlled fields in Electron/Tauri apps.
 
-Pro is a license key, verified against Gumroad, cached locally for a week so the server works offline between checks.
+Pro is a license key, verified against Gumroad, cached locally for a week so the server works offline between checks. You'll receive the key by email right after checkout.
 
 ```bash
 export WEBVIEW_MCP_LICENSE_KEY="your-key-from-gumroad"
-export WEBVIEW_MCP_GUMROAD_PRODUCT_ID="<set after creating the product>"
 ```
 
 ## Install
@@ -42,8 +41,7 @@ Add to your MCP client config (e.g. Claude Desktop `claude_desktop_config.json`)
       "command": "node",
       "args": ["/absolute/path/to/webview-mcp/src/index.js"],
       "env": {
-        "WEBVIEW_MCP_LICENSE_KEY": "your-key-from-gumroad",
-        "WEBVIEW_MCP_GUMROAD_PRODUCT_ID": "..."
+        "WEBVIEW_MCP_LICENSE_KEY": "your-key-from-gumroad"
       }
     }
   }

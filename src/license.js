@@ -2,7 +2,8 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
-const GUMROAD_PRODUCT_ID = process.env.WEBVIEW_MCP_GUMROAD_PRODUCT_ID || "";
+const DEFAULT_GUMROAD_PRODUCT_ID = "6WZIgtSizudGA8LxaFn--g==";
+const GUMROAD_PRODUCT_ID = process.env.WEBVIEW_MCP_GUMROAD_PRODUCT_ID || DEFAULT_GUMROAD_PRODUCT_ID;
 const CACHE_DIR = join(homedir(), ".webview-mcp");
 const CACHE_FILE = join(CACHE_DIR, "license-cache.json");
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // re-verify weekly, work offline in between
@@ -45,7 +46,7 @@ async function verifyWithGumroad(licenseKey) {
  */
 export async function isProLicensed() {
   const licenseKey = (process.env.WEBVIEW_MCP_LICENSE_KEY || "").trim();
-  if (!licenseKey || !GUMROAD_PRODUCT_ID) return false;
+  if (!licenseKey) return false;
 
   const cache = readCache();
   if (cache && cache.licenseKey === licenseKey && Date.now() - cache.checkedAt < CACHE_TTL_MS) {
@@ -64,4 +65,4 @@ export async function isProLicensed() {
   }
 }
 
-export const PURCHASE_URL = "https://webviewmcp.gumroad.com/l/pro";
+export const PURCHASE_URL = "https://9298143553819.gumroad.com/l/jxptds";
