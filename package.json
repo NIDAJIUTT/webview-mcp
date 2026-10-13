@@ -1,0 +1,30 @@
+{
+  "name": "webview-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for reliably automating third-party Electron/Tauri (WebView-based) macOS apps that expose broken/empty accessibility trees",
+  "main": "src/index.js",
+  "bin": {
+    "webview-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "accessibility",
+    "automation",
+    "electron",
+    "tauri",
+    "macos",
+    "applescript",
+    "jxa"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.7"
+  }
+}
